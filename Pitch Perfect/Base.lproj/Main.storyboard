@@ -15,6 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Wrp-fJ-4R3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4O9-eb-E0W">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlF-UO-mqc">
@@ -25,29 +26,64 @@
                                     <action selector="playslow:" destination="dIQ-lu-bcp" eventType="touchUpInside" id="ge0-lp-IVx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LT-mJ-DfH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" image="speedButton"/>
+                                <connections>
+                                    <action selector="playFast:" destination="dIQ-lu-bcp" eventType="touchUpInside" id="k4w-YC-ajm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEH-KC-rJN">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" image="stopbutton"/>
+                                <connections>
+                                    <action selector="stopButton:" destination="dIQ-lu-bcp" eventType="touchUpInside" id="MNT-5P-hw3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="1LT-mJ-DfH" secondAttribute="trailing" constant="7" id="2yw-4w-GAe"/>
+                            <constraint firstItem="LEH-KC-rJN" firstAttribute="leading" secondItem="4O9-eb-E0W" secondAttribute="leadingMargin" constant="130" id="975-AR-6mz"/>
                             <constraint firstItem="JlF-UO-mqc" firstAttribute="top" secondItem="Z54-Pn-ZAQ" secondAttribute="bottom" constant="32" id="Io8-Az-14R"/>
+                            <constraint firstItem="1LT-mJ-DfH" firstAttribute="top" secondItem="Z54-Pn-ZAQ" secondAttribute="bottom" constant="32" id="e6f-0d-8KA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LEH-KC-rJN" secondAttribute="trailing" constant="130" id="f9d-Eu-xiG"/>
                             <constraint firstItem="JlF-UO-mqc" firstAttribute="leading" secondItem="4O9-eb-E0W" secondAttribute="leadingMargin" constant="7" id="gHl-tT-hOV"/>
+                            <constraint firstItem="Wrp-fJ-4R3" firstAttribute="top" secondItem="LEH-KC-rJN" secondAttribute="bottom" constant="20" id="vGG-5G-SDO"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="JlF-UO-mqc"/>
+                                <exclude reference="1LT-mJ-DfH"/>
+                                <exclude reference="LEH-KC-rJN"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Io8-Az-14R"/>
                                 <exclude reference="gHl-tT-hOV"/>
+                                <exclude reference="2yw-4w-GAe"/>
+                                <exclude reference="e6f-0d-8KA"/>
+                                <exclude reference="975-AR-6mz"/>
+                                <exclude reference="f9d-Eu-xiG"/>
+                                <exclude reference="vGG-5G-SDO"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="JlF-UO-mqc"/>
+                                <include reference="1LT-mJ-DfH"/>
+                                <include reference="LEH-KC-rJN"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Io8-Az-14R"/>
                                 <include reference="gHl-tT-hOV"/>
+                                <include reference="2yw-4w-GAe"/>
+                                <include reference="e6f-0d-8KA"/>
+                                <include reference="975-AR-6mz"/>
+                                <include reference="f9d-Eu-xiG"/>
+                                <include reference="vGG-5G-SDO"/>
                             </mask>
                         </variation>
                     </view>
@@ -174,6 +210,7 @@
     <resources>
         <image name="microphone" width="100" height="100"/>
         <image name="slowbutton" width="100" height="100"/>
+        <image name="speedButton" width="100" height="100"/>
         <image name="stopbutton" width="100" height="100"/>
     </resources>
 </document>
