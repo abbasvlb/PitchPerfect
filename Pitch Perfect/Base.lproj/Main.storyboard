@@ -61,13 +61,13 @@
                                 <exclude reference="LEH-KC-rJN"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Io8-Az-14R"/>
-                                <exclude reference="gHl-tT-hOV"/>
+                                <exclude reference="vGG-5G-SDO"/>
                                 <exclude reference="2yw-4w-GAe"/>
                                 <exclude reference="e6f-0d-8KA"/>
+                                <exclude reference="Io8-Az-14R"/>
+                                <exclude reference="gHl-tT-hOV"/>
                                 <exclude reference="975-AR-6mz"/>
                                 <exclude reference="f9d-Eu-xiG"/>
-                                <exclude reference="vGG-5G-SDO"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -77,13 +77,13 @@
                                 <include reference="LEH-KC-rJN"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Io8-Az-14R"/>
-                                <include reference="gHl-tT-hOV"/>
+                                <include reference="vGG-5G-SDO"/>
                                 <include reference="2yw-4w-GAe"/>
                                 <include reference="e6f-0d-8KA"/>
+                                <include reference="Io8-Az-14R"/>
+                                <include reference="gHl-tT-hOV"/>
                                 <include reference="975-AR-6mz"/>
                                 <include reference="f9d-Eu-xiG"/>
-                                <include reference="vGG-5G-SDO"/>
                             </mask>
                         </variation>
                     </view>
@@ -95,7 +95,7 @@
         <!--Record-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RecordSoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
