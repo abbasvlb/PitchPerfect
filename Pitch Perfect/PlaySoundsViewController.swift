@@ -12,17 +12,20 @@ import AVFoundation
 class PlaySoundsViewController: UIViewController {
 
     var audioPlayer=AVAudioPlayer()
+    var recordedAudio:RecordedAudio!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if var filePath = NSBundle.mainBundle().URLForResource("movie_quote", withExtension: "mp3"){
-            audioPlayer=try!
-            AVAudioPlayer(contentsOfURL: filePath)
-            audioPlayer.enableRate=true
-        }else{
-            print("filepath is empty")
-        }
+//        if var filePath = NSBundle.mainBundle().URLForResource("movie_quote", withExtension: "mp3"){
+//            
+//        }else{
+//            print("filepath is empty")
+//        }
+        
+        audioPlayer=try! AVAudioPlayer(contentsOfURL: recordedAudio.filePathUrl)
+        audioPlayer.enableRate=true
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,5 +57,8 @@ class PlaySoundsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func playChipmunkAudio(sender: UIButton) {
+    }
 
 }

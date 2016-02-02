@@ -42,13 +42,23 @@
                                     <action selector="stopButton:" destination="dIQ-lu-bcp" eventType="touchUpInside" id="MNT-5P-hw3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITu-ab-9cr">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" image="chipmunk"/>
+                                <connections>
+                                    <action selector="playChipmunkAudio:" destination="dIQ-lu-bcp" eventType="touchUpInside" id="tM6-jb-AT3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="1LT-mJ-DfH" secondAttribute="trailing" constant="7" id="2yw-4w-GAe"/>
                             <constraint firstItem="LEH-KC-rJN" firstAttribute="leading" secondItem="4O9-eb-E0W" secondAttribute="leadingMargin" constant="130" id="975-AR-6mz"/>
+                            <constraint firstItem="ITu-ab-9cr" firstAttribute="leading" secondItem="4O9-eb-E0W" secondAttribute="leadingMargin" constant="7" id="9mP-KO-9S2"/>
                             <constraint firstItem="JlF-UO-mqc" firstAttribute="top" secondItem="Z54-Pn-ZAQ" secondAttribute="bottom" constant="32" id="Io8-Az-14R"/>
+                            <constraint firstItem="ITu-ab-9cr" firstAttribute="top" secondItem="JlF-UO-mqc" secondAttribute="bottom" constant="73" id="ORM-Ke-9Fr"/>
                             <constraint firstItem="1LT-mJ-DfH" firstAttribute="top" secondItem="Z54-Pn-ZAQ" secondAttribute="bottom" constant="32" id="e6f-0d-8KA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LEH-KC-rJN" secondAttribute="trailing" constant="130" id="f9d-Eu-xiG"/>
                             <constraint firstItem="JlF-UO-mqc" firstAttribute="leading" secondItem="4O9-eb-E0W" secondAttribute="leadingMargin" constant="7" id="gHl-tT-hOV"/>
@@ -59,15 +69,18 @@
                                 <exclude reference="JlF-UO-mqc"/>
                                 <exclude reference="1LT-mJ-DfH"/>
                                 <exclude reference="LEH-KC-rJN"/>
+                                <exclude reference="ITu-ab-9cr"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="vGG-5G-SDO"/>
-                                <exclude reference="2yw-4w-GAe"/>
-                                <exclude reference="e6f-0d-8KA"/>
                                 <exclude reference="Io8-Az-14R"/>
                                 <exclude reference="gHl-tT-hOV"/>
+                                <exclude reference="9mP-KO-9S2"/>
+                                <exclude reference="ORM-Ke-9Fr"/>
+                                <exclude reference="2yw-4w-GAe"/>
+                                <exclude reference="e6f-0d-8KA"/>
                                 <exclude reference="975-AR-6mz"/>
                                 <exclude reference="f9d-Eu-xiG"/>
+                                <exclude reference="vGG-5G-SDO"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -75,22 +88,25 @@
                                 <include reference="JlF-UO-mqc"/>
                                 <include reference="1LT-mJ-DfH"/>
                                 <include reference="LEH-KC-rJN"/>
+                                <include reference="ITu-ab-9cr"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="vGG-5G-SDO"/>
-                                <include reference="2yw-4w-GAe"/>
-                                <include reference="e6f-0d-8KA"/>
                                 <include reference="Io8-Az-14R"/>
                                 <include reference="gHl-tT-hOV"/>
+                                <include reference="9mP-KO-9S2"/>
+                                <include reference="ORM-Ke-9Fr"/>
+                                <include reference="2yw-4w-GAe"/>
+                                <include reference="e6f-0d-8KA"/>
                                 <include reference="975-AR-6mz"/>
                                 <include reference="f9d-Eu-xiG"/>
+                                <include reference="vGG-5G-SDO"/>
                             </mask>
                         </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOU-Ov-1LW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2202" y="367"/>
+            <point key="canvasLocation" x="2200.5" y="367"/>
         </scene>
         <!--Record-->
         <scene sceneID="tne-QT-ifu">
@@ -125,7 +141,6 @@
                                 <state key="normal" image="stopbutton"/>
                                 <connections>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zhx-WP-X05"/>
-                                    <segue destination="dIQ-lu-bcp" kind="show" id="jqc-yj-wox"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -181,11 +196,12 @@
                         <outlet property="recordButton" destination="La3-ei-m5D" id="CJn-3j-wlu"/>
                         <outlet property="recordingInProgress" destination="lpS-AJ-TZ9" id="rk0-GK-kIe"/>
                         <outlet property="stopButton" destination="O5k-vg-ITx" id="TTC-jq-Zul"/>
+                        <segue destination="dIQ-lu-bcp" kind="show" identifier="stopRecording" id="H3o-44-zrK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1434" y="367"/>
+            <point key="canvasLocation" x="1474.5" y="367"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fmS-wg-68B">
@@ -208,6 +224,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chipmunk" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slowbutton" width="100" height="100"/>
         <image name="speedButton" width="100" height="100"/>
