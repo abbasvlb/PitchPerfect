@@ -50,6 +50,14 @@
                                     <action selector="playChipmunkAudio:" destination="dIQ-lu-bcp" eventType="touchUpInside" id="tM6-jb-AT3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTm-qM-d5b">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" image="darthvader"/>
+                                <connections>
+                                    <action selector="playDarthvander:" destination="dIQ-lu-bcp" eventType="touchUpInside" id="65j-mz-xMY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -58,10 +66,12 @@
                             <constraint firstItem="LEH-KC-rJN" firstAttribute="leading" secondItem="4O9-eb-E0W" secondAttribute="leadingMargin" constant="130" id="975-AR-6mz"/>
                             <constraint firstItem="ITu-ab-9cr" firstAttribute="leading" secondItem="4O9-eb-E0W" secondAttribute="leadingMargin" constant="7" id="9mP-KO-9S2"/>
                             <constraint firstItem="JlF-UO-mqc" firstAttribute="top" secondItem="Z54-Pn-ZAQ" secondAttribute="bottom" constant="32" id="Io8-Az-14R"/>
+                            <constraint firstItem="qTm-qM-d5b" firstAttribute="top" secondItem="1LT-mJ-DfH" secondAttribute="bottom" constant="73" id="Mfr-i9-ZVh"/>
                             <constraint firstItem="ITu-ab-9cr" firstAttribute="top" secondItem="JlF-UO-mqc" secondAttribute="bottom" constant="73" id="ORM-Ke-9Fr"/>
                             <constraint firstItem="1LT-mJ-DfH" firstAttribute="top" secondItem="Z54-Pn-ZAQ" secondAttribute="bottom" constant="32" id="e6f-0d-8KA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LEH-KC-rJN" secondAttribute="trailing" constant="130" id="f9d-Eu-xiG"/>
                             <constraint firstItem="JlF-UO-mqc" firstAttribute="leading" secondItem="4O9-eb-E0W" secondAttribute="leadingMargin" constant="7" id="gHl-tT-hOV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qTm-qM-d5b" secondAttribute="trailing" constant="7" id="hL0-Nq-L5l"/>
                             <constraint firstItem="Wrp-fJ-4R3" firstAttribute="top" secondItem="LEH-KC-rJN" secondAttribute="bottom" constant="20" id="vGG-5G-SDO"/>
                         </constraints>
                         <variation key="default">
@@ -70,6 +80,7 @@
                                 <exclude reference="1LT-mJ-DfH"/>
                                 <exclude reference="LEH-KC-rJN"/>
                                 <exclude reference="ITu-ab-9cr"/>
+                                <exclude reference="qTm-qM-d5b"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Io8-Az-14R"/>
@@ -78,6 +89,8 @@
                                 <exclude reference="ORM-Ke-9Fr"/>
                                 <exclude reference="2yw-4w-GAe"/>
                                 <exclude reference="e6f-0d-8KA"/>
+                                <exclude reference="Mfr-i9-ZVh"/>
+                                <exclude reference="hL0-Nq-L5l"/>
                                 <exclude reference="975-AR-6mz"/>
                                 <exclude reference="f9d-Eu-xiG"/>
                                 <exclude reference="vGG-5G-SDO"/>
@@ -89,6 +102,7 @@
                                 <include reference="1LT-mJ-DfH"/>
                                 <include reference="LEH-KC-rJN"/>
                                 <include reference="ITu-ab-9cr"/>
+                                <include reference="qTm-qM-d5b"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Io8-Az-14R"/>
@@ -97,6 +111,8 @@
                                 <include reference="ORM-Ke-9Fr"/>
                                 <include reference="2yw-4w-GAe"/>
                                 <include reference="e6f-0d-8KA"/>
+                                <include reference="Mfr-i9-ZVh"/>
+                                <include reference="hL0-Nq-L5l"/>
                                 <include reference="975-AR-6mz"/>
                                 <include reference="f9d-Eu-xiG"/>
                                 <include reference="vGG-5G-SDO"/>
@@ -225,6 +241,7 @@
     </scenes>
     <resources>
         <image name="chipmunk" width="100" height="100"/>
+        <image name="darthvader" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slowbutton" width="100" height="100"/>
         <image name="speedButton" width="100" height="100"/>

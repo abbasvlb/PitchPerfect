@@ -14,6 +14,9 @@ class PlaySoundsViewController: UIViewController {
     var audioPlayer=AVAudioPlayer()
     var recordedAudio:RecordedAudio!
     
+    var audioEngine:AVAudioEngine!
+    var audioFile:AVAudioFile!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +28,9 @@ class PlaySoundsViewController: UIViewController {
         
         audioPlayer=try! AVAudioPlayer(contentsOfURL: recordedAudio.filePathUrl)
         audioPlayer.enableRate=true
+        
+        audioEngine=AVAudioEngine()
+        audioFile=try! AVAudioFile(forReading: recordedAudio.filePathUrl)
         
     }
 
@@ -59,6 +65,31 @@ class PlaySoundsViewController: UIViewController {
     */
     
     @IBAction func playChipmunkAudio(sender: UIButton) {
+        playCustomVoice(1000)
+    }
+    
+    func playCustomVoice(pitch: Float){
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
+        let audioNode=AVAudioPlayerNode()
+        audioEngine.attachNode(audioNode)
+        
+        let audioPitch=AVAudioUnitTimePitch()
+        audioPitch.pitch=pitch
+        audioEngine.attachNode(audioPitch)
+        
+        audioEngine.connect(audioNode, to: audioPitch, format: nil)
+        audioEngine.connect(audioPitch, to: audioEngine.outputNode, format: nil)
+        
+        audioNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        try! audioEngine.start()
+        
+        audioNode.play()
     }
 
+    @IBAction func playDarthvander(sender: UIButton) {
+        playCustomVoice(-1000)
+    }
 }
