@@ -25,8 +25,8 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate{
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        stopButton.hidden=true;
+    override func viewWillAppear(_ animated: Bool) {
+        stopButton.isHidden=true;
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,10 +35,10 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate{
     }
 
 
-    @IBAction func stopRecording(sender: UIButton) {
-        recordingInProgress.hidden=true;
-        recordButton.enabled=true;
-        stopButton.hidden=true;
+    @IBAction func stopRecording(_ sender: UIButton) {
+        recordingInProgress.isHidden=true;
+        recordButton.isEnabled=true;
+        stopButton.isHidden=true;
         
         audioRecorder.stop()
         
@@ -46,23 +46,23 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate{
         try! audiosession.setActive(false)
     }
     
-    @IBAction func recordbutton(sender: UIButton) {
-        recordButton.enabled=false;
-        stopButton.hidden=false;
-        recordingInProgress.hidden=false;
+    @IBAction func recordbutton(_ sender: UIButton) {
+        recordButton.isEnabled=false;
+        stopButton.isHidden=false;
+        recordingInProgress.isHidden=false;
         
         // get directory path to store the recorded audio
-        let dirPath=NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let dirPath=NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         
         // create filename using date to save recorded file
-        let currentDateTime=NSDate()
-        let formatter = NSDateFormatter()
+        let currentDateTime=Date()
+        let formatter = DateFormatter()
         formatter.dateFormat="yyyyMMdd-HHmmss"
-        let recordingName=formatter.stringFromDate(currentDateTime)+".wav"
+        let recordingName=formatter.string(from: currentDateTime)+".wav"
         
         // create NSURL file path.
         let pathArray=[dirPath,recordingName]
-        let filePath=NSURL.fileURLWithPathComponents(pathArray)
+        let filePath=URL.fileURL(withPathComponents: pathArray)
         
         print(filePath)
         
@@ -71,9 +71,9 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate{
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
         
         // create object for audiorecorder
-        try! audioRecorder=AVAudioRecorder(URL: filePath!, settings: [:])
+        try! audioRecorder=AVAudioRecorder(url: filePath!, settings: [:])
         audioRecorder.delegate=self
-        audioRecorder.meteringEnabled=true
+        audioRecorder.isMeteringEnabled=true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
         
@@ -81,22 +81,22 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate{
         
     }
     
-    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if(flag){
             recordedAudio=RecordedAudio()
             recordedAudio.filePathUrl=recorder.url
             recordedAudio.title=recorder.url.lastPathComponent
             
-            self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
+            self.performSegue(withIdentifier: "stopRecording", sender: recordedAudio)
         }else{
-            recordButton.enabled=true;
-            stopButton.hidden=true;
+            recordButton.isEnabled=true;
+            stopButton.isHidden=true;
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier=="stopRecording"){
-            let playSoundVC:PlaySoundsViewController=segue.destinationViewController as! PlaySoundsViewController
+            let playSoundVC:PlaySoundsViewController=segue.destination as! PlaySoundsViewController
             let data=sender as! RecordedAudio
             playSoundVC.recordedAudio=data;
         }

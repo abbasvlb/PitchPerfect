@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A20A7FC11C2A5BF10065A3BA /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A7FC01C2A5BF10065A3BA /* PlaySoundsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A20A7FC11C2A5BF10065A3BA /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A7FC01C2A5BF10065A3BA /* PlaySoundsViewController.swift */; };
 		A218C7681C28FB5400649539 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218C7671C28FB5400649539 /* AppDelegate.swift */; };
 		A218C76A1C28FB5400649539 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218C7691C28FB5400649539 /* RecordSoundsViewController.swift */; };
 		A218C76D1C28FB5400649539 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A218C76B1C28FB5400649539 /* Main.storyboard */; };
@@ -15,8 +15,8 @@
 		A218C7721C28FB5400649539 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A218C7701C28FB5400649539 /* LaunchScreen.storyboard */; };
 		A218C77D1C28FB5500649539 /* Pitch_PerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218C77C1C28FB5500649539 /* Pitch_PerfectTests.swift */; };
 		A218C7881C28FB5500649539 /* Pitch_PerfectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218C7871C28FB5500649539 /* Pitch_PerfectUITests.swift */; };
-		A21CAA0F1C2BA14900610C8A /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A21CAA0E1C2BA14900610C8A /* movie_quote.mp3 */; settings = {ASSET_TAGS = (); }; };
-		A2238A5B1C605A64005CED6C /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2238A5A1C605A64005CED6C /* RecordedAudio.swift */; settings = {ASSET_TAGS = (); }; };
+		A21CAA0F1C2BA14900610C8A /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A21CAA0E1C2BA14900610C8A /* movie_quote.mp3 */; };
+		A2238A5B1C605A64005CED6C /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2238A5A1C605A64005CED6C /* RecordedAudio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,13 +218,16 @@
 					A218C7631C28FB5400649539 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 76957RGRE5;
+						LastSwiftMigration = 0810;
 					};
 					A218C7771C28FB5500649539 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0810;
 						TestTargetID = A218C7631C28FB5400649539;
 					};
 					A218C7821C28FB5500649539 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0810;
 						TestTargetID = A218C7631C28FB5400649539;
 					};
 				};
@@ -431,6 +434,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ivymobility.Pitch-Perfect";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -444,6 +448,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ivymobility.Pitch-Perfect";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -455,6 +460,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ivymobility.Pitch-PerfectTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pitch Perfect.app/Pitch Perfect";
 			};
 			name = Debug;
@@ -467,6 +473,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ivymobility.Pitch-PerfectTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pitch Perfect.app/Pitch Perfect";
 			};
 			name = Release;
@@ -478,6 +485,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ivymobility.Pitch-PerfectUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Pitch Perfect";
 				USES_XCTRUNNER = YES;
 			};
@@ -490,6 +498,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ivymobility.Pitch-PerfectUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Pitch Perfect";
 				USES_XCTRUNNER = YES;
 			};

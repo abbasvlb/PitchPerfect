@@ -26,11 +26,11 @@ class PlaySoundsViewController: UIViewController {
 //            print("filepath is empty")
 //        }
         
-        audioPlayer=try! AVAudioPlayer(contentsOfURL: recordedAudio.filePathUrl)
+        audioPlayer=try! AVAudioPlayer(contentsOf: recordedAudio.filePathUrl as URL)
         audioPlayer.enableRate=true
         
         audioEngine=AVAudioEngine()
-        audioFile=try! AVAudioFile(forReading: recordedAudio.filePathUrl)
+        audioFile=try! AVAudioFile(forReading: recordedAudio.filePathUrl as URL)
         
     }
 
@@ -39,17 +39,17 @@ class PlaySoundsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func playslow(sender: UIButton) {
+    @IBAction func playslow(_ sender: UIButton) {
         audioPlayer.stop()
         audioPlayer.rate=0.5
         audioPlayer.play()
         
     }
 
-    @IBAction func stopButton(sender: AnyObject) {
+    @IBAction func stopButton(_ sender: AnyObject) {
         audioPlayer.stop()
     }
-    @IBAction func playFast(sender: AnyObject) {
+    @IBAction func playFast(_ sender: AnyObject) {
         audioPlayer.stop()
         audioPlayer.rate=1.5
         audioPlayer.play()
@@ -64,32 +64,32 @@ class PlaySoundsViewController: UIViewController {
     }
     */
     
-    @IBAction func playChipmunkAudio(sender: UIButton) {
+    @IBAction func playChipmunkAudio(_ sender: UIButton) {
         playCustomVoice(1000)
     }
     
-    func playCustomVoice(pitch: Float){
+    func playCustomVoice(_ pitch: Float){
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
         
         let audioNode=AVAudioPlayerNode()
-        audioEngine.attachNode(audioNode)
+        audioEngine.attach(audioNode)
         
         let audioPitch=AVAudioUnitTimePitch()
         audioPitch.pitch=pitch
-        audioEngine.attachNode(audioPitch)
+        audioEngine.attach(audioPitch)
         
         audioEngine.connect(audioNode, to: audioPitch, format: nil)
         audioEngine.connect(audioPitch, to: audioEngine.outputNode, format: nil)
         
-        audioNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioNode.scheduleFile(audioFile, at: nil, completionHandler: nil)
         try! audioEngine.start()
         
         audioNode.play()
     }
 
-    @IBAction func playDarthvander(sender: UIButton) {
+    @IBAction func playDarthvander(_ sender: UIButton) {
         playCustomVoice(-1000)
     }
 }
