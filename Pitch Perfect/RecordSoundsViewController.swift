@@ -61,8 +61,9 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate{
         let recordingName=formatter.string(from: currentDateTime)+".wav"
         
         // create NSURL file path.
-        let pathArray=[dirPath,recordingName]
-        let filePath=URL.fileURL(withPathComponents: pathArray)
+        //let pathArray=[dirPath,recordingName]
+        let path = dirPath + "/" + recordingName
+        let filePath=URL(fileURLWithPath: path)
         
         print(filePath)
         
@@ -71,7 +72,7 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate{
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
         
         // create object for audiorecorder
-        try! audioRecorder=AVAudioRecorder(url: filePath!, settings: [:])
+        try! audioRecorder=AVAudioRecorder(url: filePath, settings: [:])
         audioRecorder.delegate=self
         audioRecorder.isMeteringEnabled=true
         audioRecorder.prepareToRecord()
