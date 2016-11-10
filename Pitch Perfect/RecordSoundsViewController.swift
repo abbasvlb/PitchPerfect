@@ -67,7 +67,7 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate{
         
         print(filePath)
         
-        // initilize the session to record audio
+        // initilize the session to record audio - did some change
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
         
