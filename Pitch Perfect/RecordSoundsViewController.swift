@@ -61,18 +61,19 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate{
         let recordingName=formatter.string(from: currentDateTime)+".wav"
         
         // create NSURL file path.
-        //let pathArray=[dirPath,recordingName]
-        let path = dirPath + "/" + recordingName
-        let filePath=URL(fileURLWithPath: path)
+        let pathArray=[dirPath,recordingName]
+        //let path = dirPath + "/" + recordingName
+        let filePath = URL(string: pathArray.joined(separator: "/"))
+        //let filePath=URL(fileURLWithPath: path)
         
-        print(filePath)
+        //print(filePath)
         
         // initilize the session to record audio - did some change
         let session = AVAudioSession.sharedInstance()
-        try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+        try! session.setCategory(AVAudioSessionCategoryPlayAndRecord,with:AVAudioSessionCategoryOptions.defaultToSpeaker)
         
         // create object for audiorecorder
-        try! audioRecorder=AVAudioRecorder(url: filePath, settings: [:])
+        try! audioRecorder=AVAudioRecorder(url: filePath!, settings: [:])
         audioRecorder.delegate=self
         audioRecorder.isMeteringEnabled=true
         audioRecorder.prepareToRecord()
@@ -97,7 +98,7 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier=="stopRecording"){
-            let playSoundVC:PlaySoundsViewController=segue.destination as! PlaySoundsViewController
+            let playSoundVC=segue.destination as! PlaySoundsViewController
             let data=sender as! RecordedAudio
             playSoundVC.recordedAudio=data;
         }
