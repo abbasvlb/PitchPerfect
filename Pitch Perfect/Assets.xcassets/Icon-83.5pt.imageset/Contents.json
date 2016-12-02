@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Icon-83.5pt.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "slow@2x-iphone.png",
       "scale" : "2x"
     },
     {
